@@ -12,16 +12,37 @@ body {
     color: #333;
 }
 
-/* ===== Header ===== */
+/* ===== Header / Navbar ===== */
 header {
-    background: #111;
+    background: #e63946; /* red background */
     color: #fff;
     padding: 15px 20px;
 }
 
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 40px; /* adjust logo size */
+    margin-right: 10px;
+}
+
+header .logo span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
 header nav ul {
     display: flex;
-    justify-content: center;
     list-style: none;
 }
 
@@ -71,11 +92,12 @@ header nav ul li a {
 
 .hero .btn {
     display: inline-block;
-    background: #e63946;
-    color: #fff;
+    background: #fff;
+    color: #e63946;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
+    font-weight: bold;
 }
 
 /* ===== Sections ===== */
@@ -123,9 +145,14 @@ footer {
 
 /* ===== Responsive Design ===== */
 @media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+    }
+
     header nav ul {
         flex-direction: column;
         align-items: center;
+        margin-top: 10px;
     }
 
     .hero {
