@@ -14,7 +14,7 @@ body {
 
 /* ===== Header / Navbar ===== */
 header {
-    background: #e63946; /* red background */
+    background: #fd0000; /* red background */
     color: #fff;
     padding: 15px 20px;
 }
@@ -31,7 +31,7 @@ header .logo {
 }
 
 header .logo img {
-    height: 40px; /* adjust logo size */
+    height: 110px; /* adjust logo size */
     margin-right: 10px;
 }
 
@@ -196,3 +196,4 @@ footer {
         font-size: 0.9rem;
     }
     }
+
