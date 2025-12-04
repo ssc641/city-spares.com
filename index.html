@@ -86,12 +86,32 @@
 
   <!-- JS for mobile menu toggle -->
   <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  const closeBtn = document.querySelector('.nav-links .close-btn');
+  const overlay = document.querySelector('.sidebar-overlay');
+  const linkItems = document.querySelectorAll('.nav-links a');
 
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
+  function openSidebar() {
+    navLinks.classList.add('active');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden'; // prevent scroll behind
+  }
+
+  function closeSidebar() {
+    navLinks.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = ''; // restore scroll
+  }
+
+  menuToggle.addEventListener('click', openSidebar);
+  closeBtn.addEventListener('click', closeSidebar);
+  overlay.addEventListener('click', closeSidebar);
+  linkItems.forEach(a => a.addEventListener('click', closeSidebar));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeSidebar();
+  });
+                           </script>
 </body>
     </html>
+
